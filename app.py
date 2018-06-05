@@ -9,17 +9,13 @@ app = Flask(__name__)
 def index():
     return "<h1>Welcome to my flask app</h1><p>be careful, it's still under construction...</p>"
 
-@app.route('/hello-world')
-def hello_world():
-    return '<h1>Hello again, World!</h1>'
+@app.route('/profile/<username>')
+def user_profile(username):
+    return '<h1>{}</h1>'.format(username)
 
 @app.route('/hello-world-template')
 def hello_world_template():
     return render_template('hello_world.html')
-
-@app.route('/profile/<username>')
-def user_profile(username):
-    return '<h1>{}</h1>'.format(username)
 
 @app.route('/profile/<name>/<age>/<favorite_hobby>/<hometown>')
 def profile_page(name, age, favorite_hobby, hometown):
