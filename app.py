@@ -11,7 +11,7 @@ def index():
 
 @app.route('/profile/<username>')
 def user_profile(username):
-    return '<h1>{}</h1>'.format(username)
+    return '<h1>Welcome to {}\'s profile</h1>'.format(username.title())
 
 @app.route('/hello-world-template')
 def hello_world_template():
@@ -28,4 +28,5 @@ def profile_page(name, age, favorite_hobby, hometown):
 
 
 # tell your flask app to run with debug mode on
-app.run(debug=True)
+if __name__ == '__main__':
+    app.run(debug=True)
