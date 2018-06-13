@@ -2,7 +2,7 @@ import unittest, sys
 sys.path.insert(0, '..')
 from app import app
 
-class HelloWorldTestCase(unittest.TestCase):
+class HTMLTemplateTestCase(unittest.TestCase):
     testy = app.test_client()
 
     def test_index_status_code(self):
